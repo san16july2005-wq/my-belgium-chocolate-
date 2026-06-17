@@ -1,1 +1,273 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Namu ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      background: radial-gradient(circle at top, #ffe6f0, #ffd1dc, #ffb6c1);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .slide {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px;
+
+      opacity: 0;
+      transform: scale(0.98) translateY(50px);
+      filter: blur(8px);
+      transition: all 1.2s ease;
+    }
+
+    .slide.show {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      filter: blur(0);
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      max-width: 750px;
+      font-size: 18px;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    .s1 { background: #ffb6c1; color: white; }
+    .s2 { background: #fff0f5; }
+    .s3 { background: #ffd1dc; }
+    .s4 { background: #ffe6f0; }
+    .s5 { background: #fff0f5; }
+    .s6 { background: #ffd1dc; }
+    .s7 { background: #ffffff; }
+    .s8 { background: #ffe6f0; }
+    .s9 { background: #ffdde1; }
+    .s10 { background: #ffb6c1; color: white; }
+
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 15px rgba(255, 77, 109, 0.6),
+                  0 10px 25px rgba(0, 0, 0, 0.2);
+      margin-top: 15px;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 700px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e63e5c;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .nav {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav a {
+      margin: 4px;
+      padding: 8px 10px;
+      background: white;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #ff4d6d;
+      font-size: 13px;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 18px;
+      animation: floatUp linear forwards;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+
+  const emojis = ["❤️","💖","💕","💗"];
+  heart.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (14 + Math.random()*18) + "px";
+  heart.style.animationDuration = (5 + Math.random()*4) + "s";
+
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 9000);
+}
+setInterval(createHeart, 400);
+</script>
+
+<script>
+const slides = document.querySelectorAll(".slide");
+
+function revealSlides() {
+  const trigger = window.innerHeight * 0.85;
+
+  slides.forEach(slide => {
+    if (slide.getBoundingClientRect().top < trigger) {
+      slide.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealSlides);
+window.addEventListener("load", revealSlides);
+</script>
+
+<!-- 1 -->
+<div class="slide s1" id="s1">
+  <h1>For Namu ❤️</h1>
+  <p>This isn't just a website.
+It's a collection of things I've wanted to tell you.
+
+Keep scrolling... ❤️</p>
+</div>
+
+<!-- 2 -->
+<div class="slide s2" id="s2">
+  <h1>My Best Friend</h1>
+  <p>You're my best friend.
+The person I trust the most.</p>
+  <img src="namu.jpeg" alt="Namu">
+</div>
+
+<!-- 3 -->
+<div class="slide s3" id="s3">
+  <h1>My Boyfriend</h1>
+  <p>You're also my boyfriend.
+And I'm lucky for that.</p>
+</div>
+
+<!-- 4 -->
+<div class="slide s4" id="s4">
+  <h1>My Favorite Person</h1>
+  <p>Out of everyone... you're my favorite.</p>
+</div>
+
+<!-- 5 -->
+<div class="slide s5" id="s5">
+  <h1>My Safe Place</h1>
+  <p>You make everything feel okay.</p>
+</div>
+
+<!-- 6 -->
+<div class="slide s6" id="s6">
+  <h1>Why I Love You</h1>
+  <p>I love you because you're you. ❤️</p>
+</div>
+
+<!-- 7 -->
+<div class="slide s7" id="s7">
+  <h1>Why Namu Is Amazing</h1>
+  <div class="card">
+    <p>
+Cute 🥰
+Kind ❤️
+Funny 😂
+Strong 💪
+Smart 🧠
+Loyal 🤝
+Sweet 🍭
+    </p>
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="slide s8" id="s8">
+  <h1>Sorry</h1>
+  <p>I never meant to hurt you.</p>
+</div>
+
+<!-- 9 -->
+<div class="slide s9" id="s9">
+  <h1>The Truth</h1>
+  <p>You mean a lot to me.</p>
+</div>
+
+<!-- 10 -->
+<div class="slide s10" id="s10">
+  <h1>One Last Thing</h1>
+  <p>Thank you for everything ❤️</p>
+
+  <button onclick="document.getElementById('love').style.display='block'">
+    Secret Message 🎁
+  </button>
+
+  <div id="love" class="hidden">
+    <h2>❤️ Final Message ❤️</h2>
+    <p>You are important to me. Always.</p>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="#s1">1</a>
+  <a href="#s2">2</a>
+  <a href="#s3">3</a>
+  <a href="#s4">4</a>
+  <a href="#s5">5</a>
+  <a href="#s6">6</a>
+  <a href="#s7">7</a>
+  <a href="#s8">8</a>
+  <a href="#s9">9</a>
+  <a href="#s10">10</a>
+</div>
+
+</body>
+</html>
